@@ -4,5 +4,6 @@ from django.db import models
 class Post(models.Model):
   title = models.CharField(max_length=255)
   description = models.TextField()
+  order = models.IntegerField() #Agregamos nuevo campo
   created_at = models.DateField(auto_created=True)
   
