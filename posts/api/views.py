@@ -16,3 +16,14 @@ class PostApiView(APIView):
     # return necesita un response, resonde un status y un contenido data
     return Response(status=status.HTTP_200_OK, data=posts)#
   
+  #Metodo post
+  def post(self, request):
+    Post.objects.create(
+      title= request.POST['title'], 
+      description=request.POST['description'],
+      order=request.POST['order']
+    )
+    return self.get(request)
+    
+  
+
